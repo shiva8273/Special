@@ -1,0 +1,11 @@
+@keyframes flicker{0%,100%{transform:scale(1,1) rotate(-1deg)}25%{transform:scale(.92,1.08) rotate(2deg)}50%{transform:scale(1.05,.95) rotate(-2deg)}75%{transform:scale(.96,1.05) rotate(1deg)}}
+.flame{animation:flicker .6s infinite ease-in-out;filter:drop-shadow(0 0 8px #ffb347)}
+@keyframes rise{from{transform:translateY(0);opacity:0}15%{opacity:.8}to{transform:translateY(-110vh);opacity:0}}
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.particles span{position:absolute;bottom:-10px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink);animation:rise linear infinite}
+.particles span.blush{background:var(--baby);box-shadow:0 0 10px var(--baby)}
+@keyframes drift{0%,100%{transform:translate(-5%,0) scale(1)}50%{transform:translate(5%,-4%) scale(1.15)}}
+.aurora{position:absolute;inset:-20%;background:radial-gradient(40% 35% at 30% 40%,rgba(255,255,255,.9),transparent),radial-gradient(45% 40% at 70% 60%,rgba(246,164,195,.55),transparent);animation:drift 14s ease-in-out infinite;pointer-events:none}
+@keyframes smoke{from{opacity:.9;transform:translateY(0)}to{opacity:0;transform:translateY(-30px)}}
+.smoke{animation:smoke 2.2s forwards}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.particles{display:none}}
